@@ -5,6 +5,7 @@ import com.mumin.crud.service.PatientService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -32,6 +33,10 @@ public class PatientController {
   }
 
   // Get patient based on patient_id
-  // localhost:8090/patients/101
+  // localhost:8088/api/patients/id
+  @GetMapping("/{id}")
+  public Patient showPatientById(@PathVariable Long id) {
+    return patientService.getPatientById(id);
+  }
 
 }
