@@ -10,4 +10,6 @@ public interface PatientService {
   public List<Patient> getAllPatients();
 
   public Patient getPatientById(Long id);
+
+  public void deletePatientById(Long id);
 }
